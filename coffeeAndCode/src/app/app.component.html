@@ -1,0 +1,5 @@
+<h1>{{titulo}}</h1>
+
+<app-dados *ngFor="let dado of dados" [url]="dado.$url" [imagem]="dado.$imagem"></app-dados>
+
+<!-- {{dados | json}} -->

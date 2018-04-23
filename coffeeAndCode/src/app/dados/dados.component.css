@@ -1,0 +1,17 @@
+.imagem {
+  width: 300px;
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.imagem > img {
+  width: 100%;
+}
+
+.nome {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid black;
+}
