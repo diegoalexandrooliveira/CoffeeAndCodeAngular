@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { DadosService } from "./dados.service";
-import { Dados } from "./dados";
+import { ImagemService } from "./imagem.service";
+import { Imagem } from "./imagem";
 
 @Component({
   selector: "app-root",
@@ -9,18 +9,31 @@ import { Dados } from "./dados";
 })
 export class AppComponent {
   public titulo: string;
-  public dados;
+  public imagens: Imagem[];
+  public imagensFiltradas: Imagem[] = [];
+  public filtro: string;
 
-  constructor(private service: DadosService) {
+  constructor(private service: ImagemService) {
     this.titulo = "Coffee and Code Agro!";
 
     this.service
-      .getDados()
-      .then((dados: Dados[]) => {
-        this.dados = dados;
+      .getImagens()
+      .then((imagens: Imagem[]) => {
+        this.imagens = imagens;
+        this.imagensFiltradas = this.imagensFiltradas.concat(imagens);
       })
       .catch(erro => {
         console.log(erro);
       });
+  }
+
+  public pesquisar() {
+    this.imagensFiltradas = this.imagens.filter(imagem => {
+      if (this.filtro) {
+        return imagem.$descricao.toLowerCase().includes(this.filtro);
+      } else {
+        return true;
+      }
+    });
   }
 }

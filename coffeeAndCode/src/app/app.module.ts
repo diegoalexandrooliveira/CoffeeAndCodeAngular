@@ -1,15 +1,16 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { DadosService } from "./dados.service";
-import { DadosComponent } from './dados/dados.component';
+import { ImagemService } from "./imagem.service";
+import { ImagemComponent } from "./imagem/imagem.component";
 
 @NgModule({
-  declarations: [AppComponent, DadosComponent],
-  imports: [BrowserModule, HttpModule],
-  providers: [DadosService],
+  declarations: [AppComponent, ImagemComponent],
+  imports: [BrowserModule, HttpModule, FormsModule],
+  providers: [ImagemService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

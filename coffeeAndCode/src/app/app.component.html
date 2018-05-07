@@ -1,5 +1,6 @@
 <h1>{{titulo}}</h1>
-
-<app-dados *ngFor="let dado of dados" [url]="dado.$url" [imagem]="dado.$imagem"></app-dados>
-
-<!-- {{dados | json}} -->
+<div class="pesquisar">
+    <input [(ngModel)]="filtro" type="text">
+    <button (click)="pesquisar()">Pesquisar</button>
+</div>
+<app-imagem *ngFor="let imagem of imagensFiltradas" [url]="imagem.$url" [descricao]="imagem.$descricao"></app-imagem>
