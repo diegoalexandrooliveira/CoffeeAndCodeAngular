@@ -1,3 +1,15 @@
+// função sincrona
+function funcaoSincrona(){
+  return "Retorno da função";
+}
+
+let retorno = funcaoSincrona();
+
+
+
+
+// função assincrona com callBack
+
 function callBackExemplo(callBack) {
   let retorno = "Retorno da função";
 
@@ -7,6 +19,10 @@ function callBackExemplo(callBack) {
 callBackExemplo(function(retorno) {
   console.log(retorno);
 });
+
+
+
+// função assincrona com promise
 
 function promiseExemplo() {
   return new Promise(function(resolve, reject) {
@@ -22,4 +38,16 @@ promiseExemplo()
   })
   .catch(function(erro) {
     console.log(erro);
+  });
+
+
+  // função assincrona com observable
+
+function observableExemplo() {
+  return Observable.of("Retorno da função");
+}
+
+observableExemplo()
+  .subscribe(function(retorno) {
+    console.log(retorno);
   });
