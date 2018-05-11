@@ -1,23 +1,23 @@
 export class Imagem {
-  private descricao: string;
-  private url: string;
+  private _descricao: string;
+  private _url: string;
 
   constructor(descricao?: string, url?: string) {
-    this.descricao = descricao;
-    this.url = url;
+    this._descricao = descricao;
+    this._url = url;
   }
 
-  public get $descricao() {
-    return this.descricao;
+  public get descricao() {
+    return this._descricao;
   }
-  public set $descricao(descricao: string) {
-    this.descricao = descricao;
+  public set descricao(descricao: string) {
+    this._descricao = descricao;
   }
 
-  public get $url() {
-    return this.url;
+  public get url() {
+    return this._url;
   }
-  public set $url(url: string) {
-    this.url = url;
+  public set url(url: string) {
+    this._url = url;
   }
 }

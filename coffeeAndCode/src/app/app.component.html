@@ -1,6 +1,6 @@
 <h1>{{titulo}}</h1>
 <div class="pesquisar">
-    <input [(ngModel)]="filtro" type="text">
-    <button (click)="pesquisar()">Pesquisar</button>
+  <input [(ngModel)]="filtro" type="text">
+  <button (click)="pesquisar()">Pesquisar</button>
 </div>
-<app-imagem *ngFor="let imagem of imagensFiltradas" [url]="imagem.$url" [descricao]="imagem.$descricao"></app-imagem>
+<app-imagem *ngFor="let imagem of imagensFiltradas" [url]="imagem.url" [descricao]="imagem.descricao"></app-imagem>

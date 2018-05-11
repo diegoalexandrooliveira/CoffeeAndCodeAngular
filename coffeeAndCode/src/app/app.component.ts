@@ -30,7 +30,7 @@ export class AppComponent {
   public pesquisar() {
     this.imagensFiltradas = this.imagens.filter(imagem => {
       if (this.filtro) {
-        return imagem.$descricao.toLowerCase().includes(this.filtro);
+        return imagem.descricao.toLowerCase().includes(this.filtro);
       } else {
         return true;
       }
