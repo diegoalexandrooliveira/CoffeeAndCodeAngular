@@ -11,17 +11,13 @@ export class ImagemService {
     this.url = "http://localhost:8080/api/imagens";
   }
 
-  public getImagens(): Promise<Imagem[]> {
-    return this.http
-      .get(this.url)
-      .map((response: Response) => {
-        if (response.status != 200) {
-          throw new Error("Erro ao executar o get.");
-        }
-        return response
-          .json()
-          .map(imagem => new Imagem(imagem.descricao, imagem.url));
-      })
-      .toPromise();
+  public getImagens() {
+    return this.http.get(this.url).map((response: Response) => {
+      let json = response.json();
+      let imagens: Imagem[] = json.map(
+        item => new Imagem(item.descricao, item.url)
+      );
+      return imagens;
+    });
   }
 }

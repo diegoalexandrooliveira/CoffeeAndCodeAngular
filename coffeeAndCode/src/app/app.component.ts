@@ -16,15 +16,10 @@ export class AppComponent {
   constructor(private service: ImagemService) {
     this.titulo = "Coffee and Code Agro!";
 
-    this.service
-      .getImagens()
-      .then((imagens: Imagem[]) => {
-        this.imagens = imagens;
-        this.imagensFiltradas = this.imagensFiltradas.concat(imagens);
-      })
-      .catch(erro => {
-        console.log(erro);
-      });
+    this.service.getImagens().subscribe((imagens: Imagem[]) => {
+      this.imagens = imagens;
+      this.imagensFiltradas = this.imagensFiltradas.concat(imagens);
+    });
   }
 
   public pesquisar() {

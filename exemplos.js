@@ -16,7 +16,7 @@ function callBackExemplo(callBack) {
   return callBack(retorno);
 }
 
-callBackExemplo(function(retorno) {
+let retorno2 =callBackExemplo(function(retorno) {
   console.log(retorno);
 });
 
